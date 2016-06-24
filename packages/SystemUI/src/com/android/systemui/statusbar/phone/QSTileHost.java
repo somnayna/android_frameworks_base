@@ -37,8 +37,11 @@ import com.android.systemui.qs.tiles.FlashlightTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocationTile;
+import com.android.systemui.qs.tiles.MusicTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
+import com.android.systemui.qs.tiles.ScreenTimeoutTile;
+import com.android.systemui.qs.tiles.ScreenOffTile;
 import com.android.systemui.qs.tiles.WifiTile;
 import com.android.systemui.statusbar.policy.BluetoothController;
 import com.android.systemui.statusbar.policy.CastController;
@@ -262,6 +265,9 @@ public class QSTileHost implements QSTile.Host, Tunable {
         else if (tileSpec.equals("cast")) return new CastTile(this);
         else if (tileSpec.equals("hotspot")) return new HotspotTile(this);
         else if (tileSpec.equals("nfc")) return new NfcTile(this);
+        else if (tileSpec.equals("music")) return new MusicTile(this);
+        else if (tileSpec.equals("timeout")) return new ScreenTimeoutTile(this);
+        else if (tileSpec.equals("screenoff")) return new ScreenOffTile(this);
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(this,tileSpec);
         else throw new IllegalArgumentException("Bad tile spec: " + tileSpec);
     }
