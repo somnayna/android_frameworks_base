@@ -3919,6 +3919,11 @@ public final class Settings {
         public static final String BUTTON_EXTRA_KEY_MAPPING = "button_extra_mapping";
 
         /**
+         * @hide
+         */
+        public static final String BUTTON_SWAP_BACK_RECENTS = "button_swap_back_recents";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5220,6 +5225,15 @@ public final class Settings {
          * @hide
          */
         public static final String LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+
+        /**
+         * Disable checking for running overlays during permission changes
+         * running OmniSwitch will trigger this and we want to give people
+         * possibility to make it easier on demand
+         *
+         * @hide
+         */
+        public static final String PACKAGE_INSTALL_OVERLAY_CHECK_DISABLED = "package_install_overlay_check_disabled";
 
         /**
          * Whether lock pattern will vibrate as user enters (0 = false, 1 =
